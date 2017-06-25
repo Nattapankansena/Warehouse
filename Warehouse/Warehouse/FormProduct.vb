@@ -1,51 +1,40 @@
-﻿Public Class FormProduct
+﻿
+Public Class FormProduct
+
+    Private Sub btnAddnew_Click(sender As Object, e As EventArgs) Handles btnAddnew.Click
+        If txtAddGoodid.Text = "" Or txtAddGoodname.Text = "" Or txtAddcoust.Text = "" Then
+            MsgBox("กรุณากรอกข้อมูลให้ครบ")
+            Return
+        End If
+
+        If txtAddGoodid.TextLength < 10 Then
+            MsgBox("กรุณกรอกให้ครบ10")
+            Return
+
+        End If
+        If Not IsNumeric(txtAddcoust.Text) Then
+            MsgBox("กรุณกรอกตัวเลข")
+            Return
+        End If
 
 
+        Sql = "insert into GOODS_NAME(Goods_id, Goods_name, cout_unit) values(@id,@name,@cost)"
+
+        cmd = New SqlClient.SqlCommand(Sql, cn)
+        cmd.Parameters.Clear()
+        'cmd.Parameters.AddWithValue("id", txtAddGoodid.Text)
+        'cmd.Parameters.AddWithValue("name", txtAddGoodname.Text)
+        'cmd.Parameters.AddWithValue("cost", txtAddcoust.Text)
   
-
-
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-
-        Dim popupProduct = New PopupProduct("add", "")
-        popupProduct.ShowDialog()
-
     End Sub
 
-    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
 
+    Private Sub FormProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim goodId = listView.Items(listView.FocusedItem.Index).SubItems(0).Text()
-            Dim popupProduct = New PopupProduct("edit", goodId)
-            popupProduct.ShowDialog()
+            connect_open()
+            MsgBox("เชื่อมต่อPass")
         Catch ex As Exception
-
+            MsgBox("เชื่อมต่อfail")
         End Try
-
-
-    End Sub
-
-    
-    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        Try
-            Dim goodId = listView.Items(listView.FocusedItem.Index).SubItems(0).Text()
-
-
-            ' Delete where goodId == goodId
-        Catch ex As Exception
-
-        End Try
-    End Sub
-
-    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Close()
-    End Sub
-
-    Private Sub txtSearch_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSearch.KeyPress
-
-        Dim search = txtSearch.Text.Trim()
-
-        Dim query As String
-        query = "Select * from product_tb where goodId Like '%" + search + "%' or goodName Like '%" + search + "%'"
-
     End Sub
 End Class
