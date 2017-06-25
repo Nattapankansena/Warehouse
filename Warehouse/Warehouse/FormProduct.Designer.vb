@@ -60,10 +60,14 @@ Partial Class FormProduct
         '
         'datagridGoods
         '
-        Me.datagridGoods.AllowUserToOrderColumns = True
+        Me.datagridGoods.AllowUserToAddRows = False
+        Me.datagridGoods.AllowUserToDeleteRows = False
         Me.datagridGoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.datagridGoods.Location = New System.Drawing.Point(12, 62)
         Me.datagridGoods.Name = "datagridGoods"
+        Me.datagridGoods.ReadOnly = True
+        Me.datagridGoods.RowHeadersWidth = 20
+        Me.datagridGoods.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.datagridGoods.Size = New System.Drawing.Size(444, 310)
         Me.datagridGoods.TabIndex = 6
         '

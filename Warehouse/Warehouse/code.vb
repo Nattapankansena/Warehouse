@@ -23,6 +23,17 @@ Module code
         If cn.State = ConnectionState.Closed Then cn.Open()
     End Sub
 
+    'ฟังชั่นรีเทิน DataTable จากฐานข้อมูล
+    Friend Function cmd_excuteDataTable()
+        connect_open()
+        DA = New SqlDataAdapter(Sql, cn)
+        DS = New DataSet
+        DA.Fill(DS, "table")
+        Return DS.Tables("table")
+    End Function
+
+
+
 
 
 End Module
