@@ -72,4 +72,10 @@ Public Class FormProduct
             MsgBox("เชื่อมต่อfail" + ex.ToString)
         End Try
     End Sub
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        Sql = "select Goods_id, Goods_name, cost_unit from GOODS_NAME where Goods_id like '%" & txtSearch.Text & "%' or Goods_name like '%" & txtSearch.Text & "%' or cost_unit like '%" & txtSearch.Text & "%' "
+        datagridGoods.DataSource = cmd_excuteDataTable()
+        chang_dataid_column()
+    End Sub
 End Class
