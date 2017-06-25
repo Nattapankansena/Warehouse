@@ -18,14 +18,22 @@ Public Class FormProduct
         End If
 
 
-        Sql = "insert into GOODS_NAME(Goods_id, Goods_name, cout_unit) values(@id,@name,@cost)"
+        Sql = "insert into GOODS_NAME(Goods_id, Goods_name, cost_unit) values(@id,@name,@cost)"
 
         cmd = New SqlClient.SqlCommand(Sql, cn)
         cmd.Parameters.Clear()
         cmd.Parameters.AddWithValue("id", txtAddGoodid.Text)
         cmd.Parameters.AddWithValue("name", txtAddGoodname.Text)
         cmd.Parameters.AddWithValue("cost", txtAddcoust.Text)
-  
+
+
+        If cmd.ExecuteNonQuery = 0 Then
+            MsgBox("เพิ่มค่าไม่สำเร็จ")
+        Else
+            MsgBox("เพิ่มสำเร็จ")
+        End If
+        'cmd.ExecuteNonQuery()
+
     End Sub
 
 
@@ -34,7 +42,7 @@ Public Class FormProduct
             connect_open()
             MsgBox("เชื่อมต่อPass")
         Catch ex As Exception
-            MsgBox("เชื่อมต่อfail")
+            MsgBox("เชื่อมต่อfail" + ex.ToString )
         End Try
     End Sub
 End Class
