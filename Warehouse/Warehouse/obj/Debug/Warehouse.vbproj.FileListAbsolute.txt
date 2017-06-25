@@ -1,0 +1,11 @@
+E:\Warehouse\Warehouse\Warehouse\bin\Debug\Warehouse.exe.config
+E:\Warehouse\Warehouse\Warehouse\bin\Debug\Warehouse.exe
+E:\Warehouse\Warehouse\Warehouse\bin\Debug\Warehouse.pdb
+E:\Warehouse\Warehouse\Warehouse\bin\Debug\Warehouse.xml
+E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.FormMain.resources
+E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.FormProduct.resources
+E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.Resources.resources
+E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.vbproj.GenerateResource.Cache
+E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.exe
+E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.xml
+E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.pdb

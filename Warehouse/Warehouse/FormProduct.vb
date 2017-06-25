@@ -22,9 +22,9 @@ Public Class FormProduct
 
         cmd = New SqlClient.SqlCommand(Sql, cn)
         cmd.Parameters.Clear()
-        'cmd.Parameters.AddWithValue("id", txtAddGoodid.Text)
-        'cmd.Parameters.AddWithValue("name", txtAddGoodname.Text)
-        'cmd.Parameters.AddWithValue("cost", txtAddcoust.Text)
+        cmd.Parameters.AddWithValue("id", txtAddGoodid.Text)
+        cmd.Parameters.AddWithValue("name", txtAddGoodname.Text)
+        cmd.Parameters.AddWithValue("cost", txtAddcoust.Text)
   
     End Sub
 
