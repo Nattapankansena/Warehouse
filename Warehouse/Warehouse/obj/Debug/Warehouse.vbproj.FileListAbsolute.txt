@@ -9,3 +9,4 @@ E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.vbproj.GenerateResource.Cac
 E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.exe
 E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.xml
 E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.pdb
+E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.vbprojResolveAssemblyReference.cache

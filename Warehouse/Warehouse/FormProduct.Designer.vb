@@ -44,15 +44,23 @@ Partial Class FormProduct
         Me.txtEditGoodname = New System.Windows.Forms.TextBox()
         Me.txtEditGoodid = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.btnAddDelete = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtDeletecost = New System.Windows.Forms.TextBox()
+        Me.txtDeleteGoodname = New System.Windows.Forms.TextBox()
+        Me.txtDeleteGoodid = New System.Windows.Forms.TextBox()
         CType(Me.datagridGoods, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(582, 17)
+        Me.btnExit.Location = New System.Drawing.Point(670, 12)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 23)
         Me.btnExit.TabIndex = 4
@@ -197,7 +205,7 @@ Partial Class FormProduct
         Me.btnAddEdit.Name = "btnAddEdit"
         Me.btnAddEdit.Size = New System.Drawing.Size(75, 23)
         Me.btnAddEdit.TabIndex = 16
-        Me.btnAddEdit.Text = "บันทึก"
+        Me.btnAddEdit.Text = "แก้ไข"
         Me.btnAddEdit.UseVisualStyleBackColor = True
         '
         'Label5
@@ -246,11 +254,19 @@ Partial Class FormProduct
         '
         Me.txtEditGoodid.Location = New System.Drawing.Point(116, 34)
         Me.txtEditGoodid.Name = "txtEditGoodid"
+        Me.txtEditGoodid.ReadOnly = True
         Me.txtEditGoodid.Size = New System.Drawing.Size(124, 20)
         Me.txtEditGoodid.TabIndex = 10
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.btnAddDelete)
+        Me.TabPage3.Controls.Add(Me.Label8)
+        Me.TabPage3.Controls.Add(Me.Label9)
+        Me.TabPage3.Controls.Add(Me.Label10)
+        Me.TabPage3.Controls.Add(Me.txtDeletecost)
+        Me.TabPage3.Controls.Add(Me.txtDeleteGoodname)
+        Me.TabPage3.Controls.Add(Me.txtDeleteGoodid)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
@@ -258,6 +274,67 @@ Partial Class FormProduct
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "ลบสินค้า"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'btnAddDelete
+        '
+        Me.btnAddDelete.Location = New System.Drawing.Point(142, 243)
+        Me.btnAddDelete.Name = "btnAddDelete"
+        Me.btnAddDelete.Size = New System.Drawing.Size(75, 23)
+        Me.btnAddDelete.TabIndex = 23
+        Me.btnAddDelete.Text = "ลบ"
+        Me.btnAddDelete.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(10, 195)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(89, 13)
+        Me.Label8.TabIndex = 22
+        Me.Label8.Text = "ราคา/หน่วยสินค้า"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(12, 74)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(87, 13)
+        Me.Label9.TabIndex = 21
+        Me.Label9.Text = "รายละเอียดสินค้า"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(47, 30)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(52, 13)
+        Me.Label10.TabIndex = 20
+        Me.Label10.Text = "รหัสสินค้า"
+        '
+        'txtDeletecost
+        '
+        Me.txtDeletecost.Location = New System.Drawing.Point(116, 195)
+        Me.txtDeletecost.Name = "txtDeletecost"
+        Me.txtDeletecost.ReadOnly = True
+        Me.txtDeletecost.Size = New System.Drawing.Size(124, 20)
+        Me.txtDeletecost.TabIndex = 19
+        '
+        'txtDeleteGoodname
+        '
+        Me.txtDeleteGoodname.Location = New System.Drawing.Point(116, 71)
+        Me.txtDeleteGoodname.Multiline = True
+        Me.txtDeleteGoodname.Name = "txtDeleteGoodname"
+        Me.txtDeleteGoodname.ReadOnly = True
+        Me.txtDeleteGoodname.Size = New System.Drawing.Size(124, 106)
+        Me.txtDeleteGoodname.TabIndex = 18
+        '
+        'txtDeleteGoodid
+        '
+        Me.txtDeleteGoodid.Location = New System.Drawing.Point(116, 27)
+        Me.txtDeleteGoodid.Name = "txtDeleteGoodid"
+        Me.txtDeleteGoodid.ReadOnly = True
+        Me.txtDeleteGoodid.Size = New System.Drawing.Size(124, 20)
+        Me.txtDeleteGoodid.TabIndex = 17
         '
         'FormProduct
         '
@@ -277,6 +354,8 @@ Partial Class FormProduct
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -305,5 +384,12 @@ Partial Class FormProduct
     Friend WithEvents txtEditcoust As System.Windows.Forms.TextBox
     Friend WithEvents txtEditGoodname As System.Windows.Forms.TextBox
     Friend WithEvents txtEditGoodid As System.Windows.Forms.TextBox
+    Friend WithEvents btnAddDelete As System.Windows.Forms.Button
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents txtDeletecost As System.Windows.Forms.TextBox
+    Friend WithEvents txtDeleteGoodname As System.Windows.Forms.TextBox
+    Friend WithEvents txtDeleteGoodid As System.Windows.Forms.TextBox
 
 End Class

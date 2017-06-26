@@ -33,7 +33,10 @@ Module code
     End Function
 
 
-
+    Friend Function cmd_excuteNonquery()
+        cmd = New SqlCommand(Sql, cn)
+        Return cmd.ExecuteNonQuery()
+    End Function
 
 
 End Module
