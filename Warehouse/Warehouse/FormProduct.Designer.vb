@@ -36,10 +36,18 @@ Partial Class FormProduct
         Me.txtAddGoodname = New System.Windows.Forms.TextBox()
         Me.txtAddGoodid = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnAddEdit = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtEditcoust = New System.Windows.Forms.TextBox()
+        Me.txtEditGoodname = New System.Windows.Forms.TextBox()
+        Me.txtEditGoodid = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         CType(Me.datagridGoods, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnExit
@@ -168,6 +176,13 @@ Partial Class FormProduct
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.btnAddEdit)
+        Me.TabPage2.Controls.Add(Me.Label5)
+        Me.TabPage2.Controls.Add(Me.Label6)
+        Me.TabPage2.Controls.Add(Me.Label7)
+        Me.TabPage2.Controls.Add(Me.txtEditcoust)
+        Me.TabPage2.Controls.Add(Me.txtEditGoodname)
+        Me.TabPage2.Controls.Add(Me.txtEditGoodid)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -175,6 +190,64 @@ Partial Class FormProduct
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "แก้ไขสินค้า"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'btnAddEdit
+        '
+        Me.btnAddEdit.Location = New System.Drawing.Point(142, 250)
+        Me.btnAddEdit.Name = "btnAddEdit"
+        Me.btnAddEdit.Size = New System.Drawing.Size(75, 23)
+        Me.btnAddEdit.TabIndex = 16
+        Me.btnAddEdit.Text = "บันทึก"
+        Me.btnAddEdit.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(10, 202)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(89, 13)
+        Me.Label5.TabIndex = 15
+        Me.Label5.Text = "ราคา/หน่วยสินค้า"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(12, 81)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(87, 13)
+        Me.Label6.TabIndex = 14
+        Me.Label6.Text = "รายละเอียดสินค้า"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(47, 37)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(52, 13)
+        Me.Label7.TabIndex = 13
+        Me.Label7.Text = "รหัสสินค้า"
+        '
+        'txtEditcoust
+        '
+        Me.txtEditcoust.Location = New System.Drawing.Point(116, 202)
+        Me.txtEditcoust.Name = "txtEditcoust"
+        Me.txtEditcoust.Size = New System.Drawing.Size(124, 20)
+        Me.txtEditcoust.TabIndex = 12
+        '
+        'txtEditGoodname
+        '
+        Me.txtEditGoodname.Location = New System.Drawing.Point(116, 78)
+        Me.txtEditGoodname.Multiline = True
+        Me.txtEditGoodname.Name = "txtEditGoodname"
+        Me.txtEditGoodname.Size = New System.Drawing.Size(124, 106)
+        Me.txtEditGoodname.TabIndex = 11
+        '
+        'txtEditGoodid
+        '
+        Me.txtEditGoodid.Location = New System.Drawing.Point(116, 34)
+        Me.txtEditGoodid.Name = "txtEditGoodid"
+        Me.txtEditGoodid.Size = New System.Drawing.Size(124, 20)
+        Me.txtEditGoodid.TabIndex = 10
         '
         'TabPage3
         '
@@ -202,6 +275,8 @@ Partial Class FormProduct
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -223,5 +298,12 @@ Partial Class FormProduct
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
     Friend WithEvents btnAddnew As System.Windows.Forms.Button
+    Friend WithEvents btnAddEdit As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents txtEditcoust As System.Windows.Forms.TextBox
+    Friend WithEvents txtEditGoodname As System.Windows.Forms.TextBox
+    Friend WithEvents txtEditGoodid As System.Windows.Forms.TextBox
 
 End Class
