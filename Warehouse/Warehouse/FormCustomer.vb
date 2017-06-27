@@ -7,7 +7,9 @@
         End If
 
         If txtAddCusId.TextLength < 5 Then
-            MsgBox("กรุณกรอกให้ครบ10")
+            MsgBox("กรุณกรอกรหัสลูกค้าให้ครบ 5 หลัก")
+        ElseIf txtAddCusId.TextLength > 5 Then
+            MsgBox("กรอกรหัสลูกค้าเกิน 5 หลัก")
             Return
 
         End If

@@ -38,7 +38,9 @@ Public Class FormProduct
         End If
 
         If txtAddGoodid.TextLength < 10 Then
-            MsgBox("กรุณกรอกให้ครบ10")
+            MsgBox("กรุณกรอกให้ครบรหัสสินค้าให้ครบ 10 หลัก")
+        ElseIf txtAddGoodid.TextLength > 10 Then
+            MsgBox("กรอกรหัสสินค้าเกิน 10 หลัก")
             Return
 
         End If
