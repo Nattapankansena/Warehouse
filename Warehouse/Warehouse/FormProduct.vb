@@ -60,9 +60,9 @@ Public Class FormProduct
 
 
         If cmd.ExecuteNonQuery = 0 Then
-            MsgBox("เพิ่มค่าไม่สำเร็จ")
+            MsgBox("เพิ่มสินค้าไม่สำเร็จ")
         Else
-            MsgBox("เพิ่มสำเร็จ")
+            MsgBox("เพิ่มสินค้าสำเร็จ")
             refresh_Goods()
             chang_dataid_column()
             clear_from()
@@ -73,7 +73,7 @@ Public Class FormProduct
 
 
     Private Sub FormProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'refresh_Goods()
+        refresh_Goods()
         'Try
         '    connect_open()
         '    MsgBox("เชื่อมต่อPass")
@@ -169,6 +169,10 @@ Public Class FormProduct
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         FormMain.Show()
         Me.Close()
+
+    End Sub
+
+    Private Sub datagridGoods_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagridGoods.CellContentClick
 
     End Sub
 End Class

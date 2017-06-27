@@ -30,4 +30,9 @@
         FormProduct.Show()
         Me.Hide()
     End Sub
+
+    Private Sub รายละเอยดลกคาToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles รายละเอยดลกคาToolStripMenuItem.Click
+        FormCustomer.Show()
+        Me.Hide()
+    End Sub
 End Class
