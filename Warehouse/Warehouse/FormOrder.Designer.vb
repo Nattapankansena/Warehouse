@@ -28,6 +28,7 @@ Partial Class FormOrder
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lbl_CusName = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -37,7 +38,7 @@ Partial Class FormOrder
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.lbl_CusId, Me.ToolStripStatusLabel3, Me.lbl_CusName})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 0)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(439, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(609, 26)
         Me.StatusStrip1.TabIndex = 0
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -49,8 +50,10 @@ Partial Class FormOrder
         '
         'lbl_CusId
         '
+        Me.lbl_CusId.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_CusId.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.lbl_CusId.Name = "lbl_CusId"
-        Me.lbl_CusId.Size = New System.Drawing.Size(22, 17)
+        Me.lbl_CusId.Size = New System.Drawing.Size(37, 21)
         Me.lbl_CusId.Text = "xxx"
         '
         'ToolStripStatusLabel3
@@ -61,25 +64,38 @@ Partial Class FormOrder
         '
         'lbl_CusName
         '
+        Me.lbl_CusName.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_CusName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.lbl_CusName.Name = "lbl_CusName"
-        Me.lbl_CusName.Size = New System.Drawing.Size(22, 17)
+        Me.lbl_CusName.Size = New System.Drawing.Size(37, 21)
         Me.lbl_CusName.Text = "xxx"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(357, -1)
+        Me.Button1.Location = New System.Drawing.Point(501, 0)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(96, 23)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "ป้อนรหัสลูกค้า"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(235, 53)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(137, 18)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "บันทึกการสั่ง / รับสินค้า"
+        '
         'FormOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(439, 319)
+        Me.ClientSize = New System.Drawing.Size(609, 343)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Name = "FormOrder"
@@ -96,4 +112,5 @@ Partial Class FormOrder
     Friend WithEvents ToolStripStatusLabel3 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents lbl_CusName As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

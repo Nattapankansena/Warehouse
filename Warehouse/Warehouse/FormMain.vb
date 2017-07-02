@@ -35,4 +35,9 @@
         FormCustomer.Show()
         Me.Hide()
     End Sub
+
+    Private Sub บนทกการสงรบสนคาToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles บนทกการสงรบสนคาToolStripMenuItem.Click
+        FormOrder.Show()
+        Me.Hide()
+    End Sub
 End Class

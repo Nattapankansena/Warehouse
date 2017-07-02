@@ -83,13 +83,13 @@ Partial Class FormMain
         'รายละเอยดลกคาToolStripMenuItem
         '
         Me.รายละเอยดลกคาToolStripMenuItem.Name = "รายละเอยดลกคาToolStripMenuItem"
-        Me.รายละเอยดลกคาToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.รายละเอยดลกคาToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
         Me.รายละเอยดลกคาToolStripMenuItem.Text = "รายละเอียดลูกค้า"
         '
         'รายละเอยดสนคาToolStripMenuItem
         '
         Me.รายละเอยดสนคาToolStripMenuItem.Name = "รายละเอยดสนคาToolStripMenuItem"
-        Me.รายละเอยดสนคาToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.รายละเอยดสนคาToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
         Me.รายละเอยดสนคาToolStripMenuItem.Text = "รายละเอียดสินค้า"
         '
         'รายงานตางๆToolStripMenuItem
