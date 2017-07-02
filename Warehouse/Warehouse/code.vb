@@ -32,6 +32,12 @@ Module code
         Return DS.Tables("table")
     End Function
 
+    Friend Function cmd_excuteScalar()
+        connect_open()
+        cmd = New SqlCommand(Sql, cn)
+        Return cmd.ExecuteScalar
+    End Function
+
 
     Friend Function cmd_excuteNonquery()
         cmd = New SqlCommand(Sql, cn)

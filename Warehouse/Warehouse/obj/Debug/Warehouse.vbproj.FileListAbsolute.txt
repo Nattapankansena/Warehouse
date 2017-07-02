@@ -11,3 +11,5 @@ E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.xml
 E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.pdb
 E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.vbprojResolveAssemblyReference.cache
 E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.FormCustomer.resources
+E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.FormOrder.resources
+E:\Warehouse\Warehouse\Warehouse\obj\Debug\Warehouse.PopupCusId.resources
