@@ -56,6 +56,7 @@ Partial Class FormOrder
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnSave = New System.Windows.Forms.Button()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -179,7 +180,7 @@ Partial Class FormOrder
         '
         'DateTimeDocDate
         '
-        Me.DateTimeDocDate.CustomFormat = "dd-MM-yyyy"
+        Me.DateTimeDocDate.CustomFormat = "yyyy-MM-dd"
         Me.DateTimeDocDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimeDocDate.Location = New System.Drawing.Point(773, 206)
         Me.DateTimeDocDate.Name = "DateTimeDocDate"
@@ -188,7 +189,7 @@ Partial Class FormOrder
         '
         'DateTimeOrdDate
         '
-        Me.DateTimeOrdDate.CustomFormat = " dd-MM-yyyy"
+        Me.DateTimeOrdDate.CustomFormat = "yyyy-MM-dd"
         Me.DateTimeOrdDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimeOrdDate.Location = New System.Drawing.Point(773, 245)
         Me.DateTimeOrdDate.Name = "DateTimeOrdDate"
@@ -224,7 +225,7 @@ Partial Class FormOrder
         '
         'DateTimeFinDate
         '
-        Me.DateTimeFinDate.CustomFormat = " dd-MM-yyyy"
+        Me.DateTimeFinDate.CustomFormat = "yyyy-MM-dd"
         Me.DateTimeFinDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimeFinDate.Location = New System.Drawing.Point(773, 281)
         Me.DateTimeFinDate.Name = "DateTimeFinDate"
@@ -249,11 +250,11 @@ Partial Class FormOrder
         '
         'btnSaveOrder
         '
-        Me.btnSaveOrder.Location = New System.Drawing.Point(788, 360)
+        Me.btnSaveOrder.Location = New System.Drawing.Point(771, 362)
         Me.btnSaveOrder.Name = "btnSaveOrder"
-        Me.btnSaveOrder.Size = New System.Drawing.Size(75, 23)
+        Me.btnSaveOrder.Size = New System.Drawing.Size(102, 23)
         Me.btnSaveOrder.TabIndex = 18
-        Me.btnSaveOrder.Text = "บันทึก"
+        Me.btnSaveOrder.Text = "เพิ่มรายการสินค้า"
         Me.btnSaveOrder.UseVisualStyleBackColor = True
         '
         'txtProces
@@ -320,11 +321,21 @@ Partial Class FormOrder
         Me.ColumnHeader9.Text = "ราคารวม"
         Me.ColumnHeader9.Width = 70
         '
+        'btnSave
+        '
+        Me.btnSave.Location = New System.Drawing.Point(577, 401)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(75, 23)
+        Me.btnSave.TabIndex = 21
+        Me.btnSave.Text = "บันทึก"
+        Me.btnSave.UseVisualStyleBackColor = True
+        '
         'FormOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(957, 455)
+        Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.txtProces)
         Me.Controls.Add(Me.btnSaveOrder)
@@ -388,4 +399,5 @@ Partial Class FormOrder
     Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader9 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents btnSave As System.Windows.Forms.Button
 End Class
