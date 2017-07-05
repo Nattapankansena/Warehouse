@@ -79,8 +79,6 @@
         End If
 
 
-
-
         array_item(6) = txtAmont.Text
         array_item(7) = txtAddGoodCost.Text
         array_item(8) = array_item(7) * array_item(6)
@@ -92,25 +90,57 @@
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
-        'Sql = "insert into D_ORDER(Seq_no, Goods_id, Doc_date, Ord_date, Fin_date, Amount) values(@Seq,@GoodsId,@DocDate,@OrdDate,@FinDate,@Amount)"
+        ' Insert Header 
+        Dim CusID = lbl_CusId.Text.Trim()
+        Sql = "insert into H_ORDER(Cus_id) values (@Cus_id)"
+        cmd = New SqlClient.SqlCommand(Sql, cn)
+        cmd.Parameters.Clear()
+        cmd.Parameters.AddWithValue("Cus_id", CusID)
+        cmd.ExecuteNonQuery()
 
-        'cmd = New SqlClient.SqlCommand(Sql, cn)
-        'cmd.Parameters.Clear()
-        'cmd.Parameters.AddWithValue("Seq", ColumnHeader1.Text)
-        'cmd.Parameters.AddWithValue("GoodsId", ColumnHeader2.Text)
-        'cmd.Parameters.AddWithValue("DocDate", ColumnHeader4.Text)
-        'cmd.Parameters.AddWithValue("OrdDate", ColumnHeader5.Text)
-        'cmd.Parameters.AddWithValue("FinDate", ColumnHeader6.Text)
-        'cmd.Parameters.AddWithValue("Amount", ColumnHeader7.Text)
 
-        'If cmd.ExecuteNonQuery = 0 Then
-        '    MsgBox("เพิ่มการสั่งไม่สำเร็จ")
-        'Else
-        '    MsgBox("เพิ่มการสั่งสำเร็จ")
 
-        '    'chang_dataid_column()
-        '    clear_from()
-        'End If
+        ' Select Last Id Header
+        Sql = "SELECT TOP (1) [Seq_no] ,[Cus_id]  FROM [H_ORDER]ORDER BY [Seq_no] DESC"
+        Dim dts As DataTable = cmd_excuteDataTable()
+        Dim lastSeqNo = dts.Rows(0)("Seq_no")
+
+
+
+
+        ' Insert Items
+        Dim items = ListView1.Items()
+        For Each item As ListViewItem In items
+
+            Dim รหัสสินค้า = item.SubItems(1).Text.Trim()
+            Dim วันที่สั่งสินค้า = item.SubItems(3).Text.Trim()
+            Dim วันกำหนดส่ง = item.SubItems(4).Text.Trim()
+
+            Dim วันส่งสินค้า
+            If String.IsNullOrWhiteSpace(item.SubItems(5).Text.Trim()) = False Then
+                วันส่งสินค้า = item.SubItems(5).Text.Trim()
+            Else
+                วันส่งสินค้า = DBNull.Value
+            End If
+
+            Dim จำนวนสั่ง = item.SubItems(6).Text.Trim()
+
+
+            Sql = "insert into D_ORDER(Seq_no, Goods_id, Doc_date, Ord_date, Fin_date, Amount) values(@Seq,@GoodsId,@DocDate,@OrdDate,@FinDate,@Amount)"
+            cmd = New SqlClient.SqlCommand(Sql, cn)
+            cmd.Parameters.Clear()
+            cmd.Parameters.AddWithValue("Seq", lastSeqNo)
+            cmd.Parameters.AddWithValue("GoodsId", รหัสสินค้า)
+            cmd.Parameters.AddWithValue("DocDate", วันที่สั่งสินค้า)
+            cmd.Parameters.AddWithValue("OrdDate", วันกำหนดส่ง)
+            cmd.Parameters.AddWithValue("FinDate", วันส่งสินค้า)
+            cmd.Parameters.AddWithValue("Amount", จำนวนสั่ง)
+
+            cmd.ExecuteNonQuery()
+        Next
+
+
+      
 
     End Sub
 
