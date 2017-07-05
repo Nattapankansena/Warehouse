@@ -61,6 +61,7 @@ Partial Class PopupCusId
         Me.txtCusId.Name = "txtCusId"
         Me.txtCusId.Size = New System.Drawing.Size(100, 20)
         Me.txtCusId.TabIndex = 3
+        Me.txtCusId.Text = "12634"
         '
         'PopupCusId
         '

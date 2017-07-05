@@ -57,6 +57,7 @@ Partial Class FormOrder
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.chkFinDate = New System.Windows.Forms.CheckBox()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -160,6 +161,7 @@ Partial Class FormOrder
         Me.txtAddGoodId.Name = "txtAddGoodId"
         Me.txtAddGoodId.Size = New System.Drawing.Size(100, 20)
         Me.txtAddGoodId.TabIndex = 7
+        Me.txtAddGoodId.Text = "1234232145"
         '
         'txtAddGoodName
         '
@@ -172,7 +174,7 @@ Partial Class FormOrder
         '
         'txtAddGoodCost
         '
-        Me.txtAddGoodCost.Location = New System.Drawing.Point(773, 155)
+        Me.txtAddGoodCost.Location = New System.Drawing.Point(771, 155)
         Me.txtAddGoodCost.Name = "txtAddGoodCost"
         Me.txtAddGoodCost.ReadOnly = True
         Me.txtAddGoodCost.Size = New System.Drawing.Size(100, 20)
@@ -182,7 +184,7 @@ Partial Class FormOrder
         '
         Me.DateTimeDocDate.CustomFormat = "yyyy-MM-dd"
         Me.DateTimeDocDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimeDocDate.Location = New System.Drawing.Point(773, 206)
+        Me.DateTimeDocDate.Location = New System.Drawing.Point(771, 206)
         Me.DateTimeDocDate.Name = "DateTimeDocDate"
         Me.DateTimeDocDate.Size = New System.Drawing.Size(100, 20)
         Me.DateTimeDocDate.TabIndex = 10
@@ -191,7 +193,7 @@ Partial Class FormOrder
         '
         Me.DateTimeOrdDate.CustomFormat = "yyyy-MM-dd"
         Me.DateTimeOrdDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimeOrdDate.Location = New System.Drawing.Point(773, 245)
+        Me.DateTimeOrdDate.Location = New System.Drawing.Point(771, 245)
         Me.DateTimeOrdDate.Name = "DateTimeOrdDate"
         Me.DateTimeOrdDate.Size = New System.Drawing.Size(100, 20)
         Me.DateTimeOrdDate.TabIndex = 11
@@ -217,7 +219,7 @@ Partial Class FormOrder
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(701, 287)
+        Me.Label7.Location = New System.Drawing.Point(674, 309)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(65, 13)
         Me.Label7.TabIndex = 15
@@ -226,15 +228,16 @@ Partial Class FormOrder
         'DateTimeFinDate
         '
         Me.DateTimeFinDate.CustomFormat = "yyyy-MM-dd"
+        Me.DateTimeFinDate.Enabled = False
         Me.DateTimeFinDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimeFinDate.Location = New System.Drawing.Point(773, 281)
+        Me.DateTimeFinDate.Location = New System.Drawing.Point(744, 303)
         Me.DateTimeFinDate.Name = "DateTimeFinDate"
         Me.DateTimeFinDate.Size = New System.Drawing.Size(100, 20)
         Me.DateTimeFinDate.TabIndex = 14
         '
         'txtAmont
         '
-        Me.txtAmont.Location = New System.Drawing.Point(773, 325)
+        Me.txtAmont.Location = New System.Drawing.Point(744, 347)
         Me.txtAmont.Name = "txtAmont"
         Me.txtAmont.Size = New System.Drawing.Size(100, 20)
         Me.txtAmont.TabIndex = 16
@@ -242,7 +245,7 @@ Partial Class FormOrder
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(701, 328)
+        Me.Label8.Location = New System.Drawing.Point(674, 350)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(58, 13)
         Me.Label8.TabIndex = 17
@@ -250,7 +253,7 @@ Partial Class FormOrder
         '
         'btnSaveOrder
         '
-        Me.btnSaveOrder.Location = New System.Drawing.Point(771, 362)
+        Me.btnSaveOrder.Location = New System.Drawing.Point(744, 384)
         Me.btnSaveOrder.Name = "btnSaveOrder"
         Me.btnSaveOrder.Size = New System.Drawing.Size(102, 23)
         Me.btnSaveOrder.TabIndex = 18
@@ -330,11 +333,22 @@ Partial Class FormOrder
         Me.btnSave.Text = "บันทึก"
         Me.btnSave.UseVisualStyleBackColor = True
         '
+        'chkFinDate
+        '
+        Me.chkFinDate.AutoSize = True
+        Me.chkFinDate.Location = New System.Drawing.Point(850, 303)
+        Me.chkFinDate.Name = "chkFinDate"
+        Me.chkFinDate.Size = New System.Drawing.Size(102, 17)
+        Me.chkFinDate.TabIndex = 22
+        Me.chkFinDate.Text = "ระบุวันที่ส่งสินค้า"
+        Me.chkFinDate.UseVisualStyleBackColor = True
+        '
         'FormOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(957, 455)
+        Me.Controls.Add(Me.chkFinDate)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.txtProces)
@@ -400,4 +414,5 @@ Partial Class FormOrder
     Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader9 As System.Windows.Forms.ColumnHeader
     Friend WithEvents btnSave As System.Windows.Forms.Button
+    Friend WithEvents chkFinDate As System.Windows.Forms.CheckBox
 End Class

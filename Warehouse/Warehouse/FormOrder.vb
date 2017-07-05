@@ -72,7 +72,15 @@
         array_item(2) = txtAddGoodName.Text
         array_item(3) = DateTimeDocDate.Text
         array_item(4) = DateTimeOrdDate.Text
-        array_item(5) = DateTimeFinDate.Text
+
+        If chkFinDate.Checked Then
+            'array_item(5) = DateTimeFinDate.Value.Date.ToString("yyyy MM dd")
+            array_item(5) = DateTimeFinDate.Text
+        End If
+
+
+
+
         array_item(6) = txtAmont.Text
         array_item(7) = txtAddGoodCost.Text
         array_item(8) = array_item(7) * array_item(6)
@@ -84,26 +92,33 @@
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
-        Sql = "insert into D_ORDER(Seq_no, Goods_id, Doc_date, Ord_date, Fin_date, Amount) values(@Seq,@GoodsId,@DocDate,@OrdDate,@FinDate,@Amount)"
+        'Sql = "insert into D_ORDER(Seq_no, Goods_id, Doc_date, Ord_date, Fin_date, Amount) values(@Seq,@GoodsId,@DocDate,@OrdDate,@FinDate,@Amount)"
 
-        cmd = New SqlClient.SqlCommand(Sql, cn)
-        cmd.Parameters.Clear()
-        cmd.Parameters.AddWithValue("Seq", ColumnHeader1.Text)
-        cmd.Parameters.AddWithValue("GoodsId", ColumnHeader2.Text)
-        cmd.Parameters.AddWithValue("DocDate", ColumnHeader4.Text)
-        cmd.Parameters.AddWithValue("OrdDate", ColumnHeader5.Text)
-        cmd.Parameters.AddWithValue("FinDate", ColumnHeader6.Text)
-        cmd.Parameters.AddWithValue("Amount", ColumnHeader7.Text)
+        'cmd = New SqlClient.SqlCommand(Sql, cn)
+        'cmd.Parameters.Clear()
+        'cmd.Parameters.AddWithValue("Seq", ColumnHeader1.Text)
+        'cmd.Parameters.AddWithValue("GoodsId", ColumnHeader2.Text)
+        'cmd.Parameters.AddWithValue("DocDate", ColumnHeader4.Text)
+        'cmd.Parameters.AddWithValue("OrdDate", ColumnHeader5.Text)
+        'cmd.Parameters.AddWithValue("FinDate", ColumnHeader6.Text)
+        'cmd.Parameters.AddWithValue("Amount", ColumnHeader7.Text)
 
+        'If cmd.ExecuteNonQuery = 0 Then
+        '    MsgBox("เพิ่มการสั่งไม่สำเร็จ")
+        'Else
+        '    MsgBox("เพิ่มการสั่งสำเร็จ")
 
-        If cmd.ExecuteNonQuery = 0 Then
-            MsgBox("เพิ่มการสั่งไม่สำเร็จ")
+        '    'chang_dataid_column()
+        '    clear_from()
+        'End If
+
+    End Sub
+
+    Private Sub chkFinDate_CheckedChanged(sender As Object, e As EventArgs) Handles chkFinDate.CheckedChanged
+        If chkFinDate.Checked Then
+            DateTimeFinDate.Enabled = True
         Else
-            MsgBox("เพิ่มการสั่งสำเร็จ")
-
-            'chang_dataid_column()
-            clear_from()
+            DateTimeFinDate.Enabled = False
         End If
-
     End Sub
 End Class
