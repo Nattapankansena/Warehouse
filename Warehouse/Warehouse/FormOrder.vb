@@ -7,6 +7,7 @@
         'DateTimeOrdDate.Format = ""
         'DateTimeFinDate.Format = ""
         txtAmont.Text = ""
+
     End Sub
 
     Private Sub ToolStripStatusLabel1_Click(sender As Object, e As EventArgs) Handles ToolStripStatusLabel1.Click
@@ -66,6 +67,28 @@
     End Sub
 
     Private Sub btnSaveOrder_Click(sender As Object, e As EventArgs) Handles btnSaveOrder.Click
+        If txtAddGoodId.Text = "" Then
+            MsgBox("กรุณากรอกข้อมูลให้ครบ")
+            Return
+        End If
+
+        If txtAddGoodId.TextLength < 10 Then
+            MsgBox("กรุณกรอกรหัสลูกค้าให้ครบ 5 หลัก")
+        ElseIf txtAddGoodId.TextLength > 10 Then
+            MsgBox("กรอกรหัสลูกค้าเกิน 5 หลัก")
+            Return
+        End If
+
+        If Not IsNumeric(txtAmont.Text) Then
+            MsgBox("กรุณากรอกจำนวนสินค้าเป็นตัวเลข")
+            Return
+        End If
+
+        If txtAmont.Text = "" Then
+            MsgBox("กรุณากรอกจำนวนสินค้า")
+            Return
+        End If
+
         Dim array_item(8) As String
         array_item(0) = ListView1.Items.Count + 1
         array_item(1) = txtAddGoodId.Text
@@ -136,7 +159,16 @@
             cmd.Parameters.AddWithValue("FinDate", วันส่งสินค้า)
             cmd.Parameters.AddWithValue("Amount", จำนวนสั่ง)
 
-            cmd.ExecuteNonQuery()
+
+            If cmd.ExecuteNonQuery = 0 Then
+                MsgBox("บันทึกการสั่ง/รับสินค้า ไม่สำเร็จ")
+            Else
+                MsgBox("บันทึกการสั่ง/รับสิน ค้าสำเร็จ")
+                'refresh_CUS()
+                'chang_dataid_column()
+                clear_from()
+            End If
+
         Next
 
 
@@ -149,6 +181,31 @@
             DateTimeFinDate.Enabled = True
         Else
             DateTimeFinDate.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnDeleteAll_Click(sender As Object, e As EventArgs) Handles btnDeleteAll.Click
+        'If MsgBox("คุณต้องการยกเลิก การขายนี้หรือไม่") = vbNo Then Return
+        'ListView1.Items.Clear()
+
+        Dim result As Integer = MessageBox.Show("ต้องการลบ การขายนี้หรือไม่", "ยืนยัน", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+            Return
+
+        ElseIf result = DialogResult.Yes Then
+            ListView1.Items.Clear()
+        End If
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnDeleteSelect.Click
+
+        Dim result As Integer = MessageBox.Show("ต้องการลบ รายการที่เลือกนี้หรือไม่", "ยืนยัน", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+            Return
+
+        ElseIf result = DialogResult.Yes Then
+            ListView1.Items.Remove(ListView1.FocusedItem)
         End If
     End Sub
 End Class

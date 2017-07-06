@@ -58,6 +58,8 @@ Partial Class FormOrder
         Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnSave = New System.Windows.Forms.Button()
         Me.chkFinDate = New System.Windows.Forms.CheckBox()
+        Me.btnDeleteSelect = New System.Windows.Forms.Button()
+        Me.btnDeleteAll = New System.Windows.Forms.Button()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -101,7 +103,7 @@ Partial Class FormOrder
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(757, 0)
+        Me.Button1.Location = New System.Drawing.Point(848, 3)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(96, 23)
         Me.Button1.TabIndex = 1
@@ -121,7 +123,7 @@ Partial Class FormOrder
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(877, 60)
+        Me.btnSearch.Location = New System.Drawing.Point(848, 75)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(75, 23)
         Me.btnSearch.TabIndex = 3
@@ -131,7 +133,7 @@ Partial Class FormOrder
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(715, 66)
+        Me.Label2.Location = New System.Drawing.Point(686, 81)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(52, 13)
         Me.Label2.TabIndex = 4
@@ -140,7 +142,7 @@ Partial Class FormOrder
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(680, 93)
+        Me.Label3.Location = New System.Drawing.Point(651, 108)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(87, 13)
         Me.Label3.TabIndex = 5
@@ -149,7 +151,7 @@ Partial Class FormOrder
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(704, 162)
+        Me.Label4.Location = New System.Drawing.Point(675, 177)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(63, 13)
         Me.Label4.TabIndex = 6
@@ -157,7 +159,7 @@ Partial Class FormOrder
         '
         'txtAddGoodId
         '
-        Me.txtAddGoodId.Location = New System.Drawing.Point(773, 63)
+        Me.txtAddGoodId.Location = New System.Drawing.Point(744, 78)
         Me.txtAddGoodId.Name = "txtAddGoodId"
         Me.txtAddGoodId.Size = New System.Drawing.Size(100, 20)
         Me.txtAddGoodId.TabIndex = 7
@@ -165,7 +167,7 @@ Partial Class FormOrder
         '
         'txtAddGoodName
         '
-        Me.txtAddGoodName.Location = New System.Drawing.Point(773, 90)
+        Me.txtAddGoodName.Location = New System.Drawing.Point(744, 105)
         Me.txtAddGoodName.Multiline = True
         Me.txtAddGoodName.Name = "txtAddGoodName"
         Me.txtAddGoodName.ReadOnly = True
@@ -174,7 +176,7 @@ Partial Class FormOrder
         '
         'txtAddGoodCost
         '
-        Me.txtAddGoodCost.Location = New System.Drawing.Point(771, 155)
+        Me.txtAddGoodCost.Location = New System.Drawing.Point(742, 170)
         Me.txtAddGoodCost.Name = "txtAddGoodCost"
         Me.txtAddGoodCost.ReadOnly = True
         Me.txtAddGoodCost.Size = New System.Drawing.Size(100, 20)
@@ -184,7 +186,7 @@ Partial Class FormOrder
         '
         Me.DateTimeDocDate.CustomFormat = "yyyy-MM-dd"
         Me.DateTimeDocDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimeDocDate.Location = New System.Drawing.Point(771, 206)
+        Me.DateTimeDocDate.Location = New System.Drawing.Point(742, 221)
         Me.DateTimeDocDate.Name = "DateTimeDocDate"
         Me.DateTimeDocDate.Size = New System.Drawing.Size(100, 20)
         Me.DateTimeDocDate.TabIndex = 10
@@ -193,7 +195,7 @@ Partial Class FormOrder
         '
         Me.DateTimeOrdDate.CustomFormat = "yyyy-MM-dd"
         Me.DateTimeOrdDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimeOrdDate.Location = New System.Drawing.Point(771, 245)
+        Me.DateTimeOrdDate.Location = New System.Drawing.Point(742, 260)
         Me.DateTimeOrdDate.Name = "DateTimeOrdDate"
         Me.DateTimeOrdDate.Size = New System.Drawing.Size(100, 20)
         Me.DateTimeOrdDate.TabIndex = 11
@@ -201,7 +203,7 @@ Partial Class FormOrder
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(702, 213)
+        Me.Label5.Location = New System.Drawing.Point(673, 228)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(65, 13)
         Me.Label5.TabIndex = 12
@@ -210,7 +212,7 @@ Partial Class FormOrder
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(701, 251)
+        Me.Label6.Location = New System.Drawing.Point(672, 266)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(66, 13)
         Me.Label6.TabIndex = 13
@@ -262,7 +264,7 @@ Partial Class FormOrder
         '
         'txtProces
         '
-        Me.txtProces.Location = New System.Drawing.Point(12, 401)
+        Me.txtProces.Location = New System.Drawing.Point(481, 401)
         Me.txtProces.Name = "txtProces"
         Me.txtProces.Size = New System.Drawing.Size(75, 23)
         Me.txtProces.TabIndex = 19
@@ -272,6 +274,7 @@ Partial Class FormOrder
         'ListView1
         '
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9})
+        Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.Location = New System.Drawing.Point(23, 78)
         Me.ListView1.Name = "ListView1"
@@ -343,11 +346,31 @@ Partial Class FormOrder
         Me.chkFinDate.Text = "ระบุวันที่ส่งสินค้า"
         Me.chkFinDate.UseVisualStyleBackColor = True
         '
+        'btnDeleteSelect
+        '
+        Me.btnDeleteSelect.Location = New System.Drawing.Point(23, 401)
+        Me.btnDeleteSelect.Name = "btnDeleteSelect"
+        Me.btnDeleteSelect.Size = New System.Drawing.Size(75, 23)
+        Me.btnDeleteSelect.TabIndex = 23
+        Me.btnDeleteSelect.Text = "ลบที่เลือก"
+        Me.btnDeleteSelect.UseVisualStyleBackColor = True
+        '
+        'btnDeleteAll
+        '
+        Me.btnDeleteAll.Location = New System.Drawing.Point(117, 401)
+        Me.btnDeleteAll.Name = "btnDeleteAll"
+        Me.btnDeleteAll.Size = New System.Drawing.Size(75, 23)
+        Me.btnDeleteAll.TabIndex = 24
+        Me.btnDeleteAll.Text = "ลบทั้งหมด"
+        Me.btnDeleteAll.UseVisualStyleBackColor = True
+        '
         'FormOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(957, 455)
+        Me.Controls.Add(Me.btnDeleteAll)
+        Me.Controls.Add(Me.btnDeleteSelect)
         Me.Controls.Add(Me.chkFinDate)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.ListView1)
@@ -415,4 +438,6 @@ Partial Class FormOrder
     Friend WithEvents ColumnHeader9 As System.Windows.Forms.ColumnHeader
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents chkFinDate As System.Windows.Forms.CheckBox
+    Friend WithEvents btnDeleteSelect As System.Windows.Forms.Button
+    Friend WithEvents btnDeleteAll As System.Windows.Forms.Button
 End Class
